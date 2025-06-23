@@ -1,0 +1,214 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+
+   body {
+       width: 100%;
+       height: 100vh;
+       background: linear-gradient(135deg, #0068f9, #de5454);
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+   }
+
+   h2 {
+       background-color: #37474f;
+       color: #fff;
+       padding: 10px 20px;
+       border-radius: 10px;
+       margin-bottom: 20px;
+       animation: fadeIn 1s ease-in-out;
+   }
+
+   .chat-container {
+       width: 90%;
+       max-width: 900px;
+       height: 70vh;
+       background-color: #f5f5f5;
+       padding: 20px;
+       border-radius: 20px;
+       box-shadow: 0 10px 30px rgba(146, 115, 115, 0.1);
+       display: flex;
+       flex-direction: column;
+       overflow-y: auto;
+       gap: 15px;
+       animation: fadeInUp 1s ease-in-out;
+   }
+
+   .user-chat-box,
+   .ai-chat-box {
+       position: relative;
+       width: fit-content;
+       max-width: 80%;
+   }
+
+   .user-chat-box {
+       align-self: flex-end;
+   }
+
+   .ai-chat-box {
+       align-self: flex-start;
+   }
+
+   .user-chat-area,
+   .ai-chat-area {
+       padding: 15px 20px;
+       background-color: #263238;
+       color: #ffffffd9;
+       border-radius: 20px;
+       box-shadow: 2px 2px 10px rgba(160, 156, 156, 0.2);
+       animation: slideIn 0.5s ease;
+   }
+
+   .ai-chat-area {
+       display: flex;
+       justify-content: start;
+       align-items: center;
+       border-radius: 20px 20px 20px 0;
+   }
+
+   .user-chat-area {
+       border-radius: 20px 20px 0 20px;
+   }
+
+   .prompt-area {
+       width: 90%;
+       max-width: 900px;
+       height: auto;
+       margin-top: 20px;
+       background-color: #000000;
+       padding: 15px;
+       border-radius: 15px;
+       display: flex;
+       gap: 10px;
+       animation: fadeInUp 1.2s ease-in-out;
+   }
+
+   .prompt-area input {
+       flex: 1;
+       padding: 15px;
+       border-radius: 30px;
+       border: none;
+       outline: none;
+       font-size: 16px;
+       background-color: #263238;
+       color: #fff;
+       box-shadow: inset 0 0 10px rgba(84, 82, 82, 0.2);
+       transition: background 0.3s ease;
+   }
+
+   .prompt-area input:focus {
+       background-color: #1e272e;
+   }
+
+   .prompt-area button {
+       width: 50px;
+       height: 50px;
+       border: none;
+       border-radius: 50%;
+       background-color: #a5b0b6;
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: background 0.3s ease, transform 0.3s ease;
+   }
+
+   .prompt-area button:hover {
+       background-color: #1e272e;
+       transform: scale(1.1);
+   }
+
+   #userImage,
+   #aiImage {
+       position: absolute;
+       top: -10px;
+       width: 40px;
+   }
+
+   #userImage {
+       right: -50px;
+   }
+
+   /* #aiImage {
+            left: -50px; 
+        } */
+
+   .chooseimg {
+       width: 100px;
+       margin-top: 10px;
+       border-radius: 15px;
+   }
+
+   @keyframes fadeIn {
+       from {
+           opacity: 0;
+       }
+
+       to {
+           opacity: 1;
+       }
+   }
+
+   @keyframes fadeInUp {
+       from {
+           opacity: 0;
+           transform: translateY(20px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   @keyframes slideIn {
+       from {
+           opacity: 0;
+           transform: translateX(-20px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateX(0);
+       }
+   }
+
+   @media (max-width: 600px) {
+
+       .chat-container,
+       .prompt-area {
+           width: 95%;
+       }
+   }
+
+   /* Icon in button */
+   .button-icon img {
+       display: block;
+       width: 49px;
+       height: 49px;
+       border-radius: 50%;
+       overflow: hidden;
+       background-color: #fff;
+       padding: 4px;
+   }
+
+   /* Fix image input inside button */
+   #image {
+       position: relative;
+       overflow: hidden;
+   }
+
+   #image input[type="file"] {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       opacity: 0;
+       cursor: pointer;
+   }
